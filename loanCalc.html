@@ -25,8 +25,8 @@
         <form id="loanForm">
             <div class="form-group">
                 <label for="price">Price of your new vehicle ($):</label>
-                <input type="range" id="price" name="price" min="0" max="100000" step="500" value="25000" oninput="this.nextElementSibling.value = this.value">
-                <output>$25000</output>
+                <input type="range" id="price" name="price" min="0" max="100000" step="500" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>$0</output>
             </div>
             <div class="form-group">
                 <label for="tradeIn">Value of your trade-in vehicle ($):</label>
@@ -40,27 +40,27 @@
             </div>
             <div class="form-group">
                 <label for="downPayment">Your down payment ($):</label>
-                <input type="range" id="downPayment" name="downPayment" min="0" max="50000" step="500" value="15275" oninput="this.nextElementSibling.value = this.value">
-                <output>$15275</output>
+                <input type="range" id="downPayment" name="downPayment" min="0" max="50000" step="500" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>$0</output>
             </div>
             <div class="form-group">
                 <label for="loanDuration">Duration of your loan (months):</label>
-                <input type="range" id="loanDuration" name="loanDuration" min="12" max="96" step="1" value="96" oninput="this.nextElementSibling.value = this.value">
-                <output>96 mo</output>
+                <input type="range" id="loanDuration" name="loanDuration" min="12" max="96" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>0 mo</output>
             </div>
             <div class="form-group">
                 <label for="salesTax">Provincial sales tax (%):</label>
-                <input type="range" id="salesTax" name="salesTax" min="0" max="20" step="0.1" value="13" oninput="this.nextElementSibling.value = this.value">
-                <output>13%</output>
+                <input type="range" id="salesTax" name="salesTax" min="0" max="20" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>0%</output>
             </div>
             <div class="form-group">
                 <label for="interestRate">Expected interest rate (%):</label>
-                <input type="range" id="interestRate" name="interestRate" min="0" max="20" step="0.1" value="2.99" oninput="this.nextElementSibling.value = this.value">
-                <output>2.99%</output>
+                <input type="range" id="interestRate" name="interestRate" min="0" max="20" step="0.1" value="0.0" oninput="this.nextElementSibling.value = this.value">
+                <output>0.0%</output>
             </div>
             <div class="buttons">
                 <button type="submit">Calculate</button>
-                <button type="reset">Clear</button>
+                <button type="reset">Reset</button>
             </div>
         </form>
         <h2 id="result"></h2>
