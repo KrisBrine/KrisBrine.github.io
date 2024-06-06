@@ -8,15 +8,29 @@ document.getElementById('loanForm').addEventListener('submit', function(event) {
     const salesTax = parseFloat(document.getElementById('salesTax').value) / 100;
     const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
 
-    // Calculations
+    // Calculate loan amount
     const totalCost = price - tradeIn - loanBalance - downPayment;
     const totalCostWithTax = totalCost + (totalCost * salesTax);
-    const monthlyInterestRate = interestRate / 12;
-    const monthlyPayment = (totalCostWithTax * monthlyInterestRate) / (1 - Math.pow((1 + monthlyInterestRate), -loanDuration));
 
-    const biweeklyPayment = (totalCostWithTax * (interestRate / 26)) / (1 - Math.pow((1 + (interestRate / 26)), -(loanDuration * 2)));
-    const weeklyPayment = (totalCostWithTax * (interestRate / 52)) / (1 - Math.pow((1 + (interestRate / 52)), -(loanDuration * 4)));
+    let monthlyPayment, biweeklyPayment, weeklyPayment;
+    if (interestRate === 0) {
+        // Simplified formula for 0% interest rate
+        monthlyPayment = totalCostWithTax / loanDuration;
+        biweeklyPayment = totalCostWithTax / (loanDuration * 2);
+        weeklyPayment = totalCostWithTax / (loanDuration * 4);
+    } else {
+        const monthlyInterestRate = interestRate / 12;
+        monthlyPayment = (totalCostWithTax * monthlyInterestRate) / (1 - Math.pow((1 + monthlyInterestRate), -loanDuration));
 
+        // Calculate bi-weekly and weekly payments
+        const biweeklyInterestRate = interestRate / 26;
+        biweeklyPayment = (totalCostWithTax * biweeklyInterestRate) / (1 - Math.pow((1 + biweeklyInterestRate), -(loanDuration * 2)));
+
+        const weeklyInterestRate = interestRate / 52;
+        weeklyPayment = (totalCostWithTax * weeklyInterestRate) / (1 - Math.pow((1 + weeklyInterestRate), -(loanDuration * 4)));
+    }
+
+    // Calculate total interest
     const totalInterestMonthly = (monthlyPayment * loanDuration) - totalCostWithTax;
     const totalInterestBiweekly = (biweeklyPayment * loanDuration * 2) - totalCostWithTax;
     const totalInterestWeekly = (weeklyPayment * loanDuration * 4) - totalCostWithTax;
