@@ -14,7 +14,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: auto;
     justify-content: center;
     margin-bottom: 20rem;
