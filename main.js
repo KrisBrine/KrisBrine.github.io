@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('leaseForm');
     const result = document.getElementById('result');
+    const inputs = form.querySelectorAll('input[type="text"]');
 
     inputs.forEach(input => {
         input.addEventListener('input', function(event) {
@@ -8,11 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-
-     
 
         const capitalizedCost = parseFloat(document.getElementById('capitalizedCost').value);
         const residualValue = parseFloat(document.getElementById('residualValue').value);
@@ -21,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const salesTaxRate = parseFloat(document.getElementById('salesTaxRate').value);
         const downPayment = parseFloat(document.getElementById('downPayment').value);
         const fees = parseFloat(document.getElementById('fees').value);
+
+        if (isNaN(capitalizedCost) || isNaN(residualValue) || isNaN(apr) || isNaN(term) || isNaN(salesTaxRate) || isNaN(downPayment) || isNaN(fees)) {
+            result.textContent = 'Please enter valid numbers in all fields.';
+            return;
+        }
 
         const monthlyPayment = calculateLeasePayment(capitalizedCost, residualValue, apr, term, salesTaxRate, downPayment, fees);
 
@@ -31,9 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         result.textContent = '';
     });
 });
-
-
-
 
 function calculateLeasePayment(capitalizedCost, residualValue, apr, term, salesTaxRate, downPayment, fees) {
     const aprDecimal = apr / 100.0;
