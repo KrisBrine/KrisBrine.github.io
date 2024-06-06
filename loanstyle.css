@@ -140,6 +140,7 @@ button:hover {
     width: 40px;
     height: 24px;
     margin-top: 4px;
+    margin-right: 40px;
 }
 
 .switch input {
