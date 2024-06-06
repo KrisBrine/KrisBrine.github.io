@@ -28,10 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const monthlyPayment = calculateLeasePayment(capitalizedCost, residualValue, apr, term, salesTaxRate, downPayment, fees);
 
         result.textContent = `Monthly Lease Payment: $${monthlyPayment.toFixed(2)}`;
+        result.style.display = 'block'; 
     });
 
     form.addEventListener('reset', function() {
         result.textContent = '';
+        result.style.display = 'none'; 
     });
 });
 

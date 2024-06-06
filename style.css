@@ -21,9 +21,13 @@ body {
     margin-bottom: 20rem;
 }
 
-h1 {
+h1, h2 {
     color: #ffffff;
     text-align: center;
+}
+
+h2 {
+    display: none;
 }
 
 form {
