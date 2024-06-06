@@ -1,20 +1,21 @@
 body {
-    margin: 200px 0 0 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #121212;
     color: #ffffff;
+    padding-top: 50px; 
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    margin: 200px 0 0 0;
+    margin: 0;
     padding: auto;
     justify-content: center;
     margin-bottom: 20rem;
