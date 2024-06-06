@@ -5,38 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lease Payment Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/leaseCalc.html">Lease</a></li>
+                <li><a href="/loanCalc.html">Loan</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h1>Lease Payment Calculator</h1>
-        <form id="leaseForm">
-            <label for="capitalizedCost">Capitalized Cost ($):</label>
-            <input type="text" id="capitalizedCost" name="capitalizedCost" required><br>
-    
-            <label for="residualValue">Residual Value ($):</label>
-            <input type="text" id="residualValue" name="residualValue" required><br>
-    
-            <label for="apr">APR (%):</label>
-            <input type="text" id="apr" name="apr" required><br>
-    
-            <label for="term">Term (months):</label>
-            <input type="text" id="term" name="term" required><br>
-    
-            <label for="salesTaxRate">Sales Tax Rate (%):</label>
-            <input type="text" id="salesTaxRate" name="salesTaxRate" required><br>
-    
-            <label for="downPayment">Down Payment ($):</label>
-            <input type="text" id="downPayment" name="downPayment" required><br>
-    
-            <label for="fees">Fees ($):</label>
-            <input type="text" id="fees" name="fees" required><br>
-            <div class="buttons">
-                <button type="submit">Calculate</button>
-                <button type="reset">Clear</button>
-            </div>
-        </form>
-        <h2 id="result"></h2>
+        <button src="./leaseCalc.html">Lease Calculator</button>
+        <button src="./loanCalc.html">Loan Calculator</button>
     </div>
 </body>
 </html>
