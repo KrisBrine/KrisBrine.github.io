@@ -84,3 +84,13 @@ button:hover {
     margin-top: 20px;
     color: #ffffff;
 }
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.wrapper{
+    display: flex;
+}
