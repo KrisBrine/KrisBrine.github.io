@@ -5,7 +5,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #121212;
     color: #ffffff;
@@ -18,10 +17,10 @@ header {
     margin-bottom: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-between; /* Changed to space-between */
-    align-items: center; /* Center items vertically */
-    padding-left: 20px; /* Added padding to the left */
-    padding-right: 20px; /* Added padding to the right */
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 nav {
@@ -61,7 +60,8 @@ nav ul li a:hover {
     background-color: #1e1e1e;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20rem;
+    width: 90%;
+    max-width: 800px;
 }
 
 h1, h2 {
@@ -76,7 +76,15 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 label {
@@ -84,18 +92,14 @@ label {
     color: #b0b0b0;
 }
 
-input {
-    height: 30px;
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #333333;
-    background-color: #2c2c2c;
-    color: #ffffff;
+input[type="range"] {
+    width: 100%;
 }
 
-input::placeholder {
-    color: #808080;
+output {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 button {
@@ -125,13 +129,16 @@ button:hover {
     color: #ffffff;
 }
 
+#paymentTable {
+    display: none;
+}
+
 .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 24px;
     margin-top: 4px;
-    margin-right: 40px;
 }
 
 .switch input {
@@ -176,30 +183,47 @@ input:checked + .slider:before {
     transform: translateX(22px);
 }
 
-.links{
+.links {
     padding-left: 40px;
 }
 
-/* Media Query for responsiveness */
+/* Table styles */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #333333;
+}
+
+table th {
+    background-color: #333333;
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: flex-start; /* Align items to the start */
-        gap: 10px; /* Add some space between items */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
     nav {
-        justify-content: flex-start; /* Align navigation to the start */
-        width: 100%; /* Full width for navigation */
+        justify-content: flex-start;
+        width: 100%;
     }
 
     nav ul {
-        flex-direction: column; /* Stack navigation links vertically */
-        gap: 10px; /* Add some space between links */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .switch {
-        align-self: flex-end; /* Move switch to the right end */
+        align-self: flex-end;
     }
 }
-

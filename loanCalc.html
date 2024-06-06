@@ -4,16 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Payment Calculator</title>
+    <link rel="stylesheet" href="loanstyle.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="links">
                 <li><a href="/leaseCalc.html">Lease</a></li>
                 <li><a href="/loanCalc.html">Loan</a></li>
             </ul>
         </nav>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
     </header>
-    Loan Calc
+    <div class="container">
+        <h1>Loan Payment Calculator</h1>
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="price">Price of your new vehicle ($):</label>
+                <input type="range" id="price" name="price" min="0" max="100000" step="500" value="25000" oninput="this.nextElementSibling.value = this.value">
+                <output>$25000</output>
+            </div>
+            <div class="form-group">
+                <label for="tradeIn">Value of your trade-in vehicle ($):</label>
+                <input type="range" id="tradeIn" name="tradeIn" min="0" max="50000" step="500" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>$0</output>
+            </div>
+            <div class="form-group">
+                <label for="loanBalance">Your existing vehicle loan balance ($):</label>
+                <input type="range" id="loanBalance" name="loanBalance" min="0" max="50000" step="500" value="0" oninput="this.nextElementSibling.value = this.value">
+                <output>$0</output>
+            </div>
+            <div class="form-group">
+                <label for="downPayment">Your down payment ($):</label>
+                <input type="range" id="downPayment" name="downPayment" min="0" max="50000" step="500" value="15275" oninput="this.nextElementSibling.value = this.value">
+                <output>$15275</output>
+            </div>
+            <div class="form-group">
+                <label for="loanDuration">Duration of your loan (months):</label>
+                <input type="range" id="loanDuration" name="loanDuration" min="12" max="96" step="1" value="96" oninput="this.nextElementSibling.value = this.value">
+                <output>96 mo</output>
+            </div>
+            <div class="form-group">
+                <label for="salesTax">Provincial sales tax (%):</label>
+                <input type="range" id="salesTax" name="salesTax" min="0" max="20" step="0.1" value="13" oninput="this.nextElementSibling.value = this.value">
+                <output>13%</output>
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Expected interest rate (%):</label>
+                <input type="range" id="interestRate" name="interestRate" min="0" max="20" step="0.1" value="2.99" oninput="this.nextElementSibling.value = this.value">
+                <output>2.99%</output>
+            </div>
+            <div class="buttons">
+                <button type="submit">Calculate</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+        <h2 id="result"></h2>
+        <table id="paymentTable">
+            <thead>
+                <tr>
+                    <th>Payment Frequency</th>
+                    <th>Payment Amount</th>
+                    <th>Total Interest to be Paid over the Duration of the Loan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monthly</td>
+                    <td id="monthlyPayment"></td>
+                    <td id="monthlyInterest"></td>
+                </tr>
+                <tr>
+                    <td>Bi-weekly</td>
+                    <td id="biweeklyPayment"></td>
+                    <td id="biweeklyInterest"></td>
+                </tr>
+                <tr>
+                    <td>Weekly</td>
+                    <td id="weeklyPayment"></td>
+                    <td id="weeklyInterest"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
