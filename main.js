@@ -2,8 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('leaseForm');
     const result = document.getElementById('result');
 
+    inputs.forEach(input => {
+        input.addEventListener('input', function(event) {
+            this.value = this.value.replace(/[^0-9.]/g, '');
+        });
+    });
+
+
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+
+     
 
         const capitalizedCost = parseFloat(document.getElementById('capitalizedCost').value);
         const residualValue = parseFloat(document.getElementById('residualValue').value);
@@ -22,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         result.textContent = '';
     });
 });
+
+
+
 
 function calculateLeasePayment(capitalizedCost, residualValue, apr, term, salesTaxRate, downPayment, fees) {
     const aprDecimal = apr / 100.0;

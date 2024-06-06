@@ -54,16 +54,6 @@ input::placeholder {
     color: #808080;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield; 
-}
-
 button {
     border: 1px solid #ccc;
     border-radius: 6px;
