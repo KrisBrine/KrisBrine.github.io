@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 200px 0 0 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
@@ -14,7 +14,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    margin: 20px 0 0 0;
+    margin: 200px 0 0 0;
     padding: auto;
     justify-content: center;
     margin-bottom: 20rem;
