@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Payment Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+</head>
+<body>
+    <dib class="container">
+        <h1>Lease Payment Calculator</h1>
+
+        <form id="leaseForm">
+            <label for="capitalizedCost">Capitalized Cost ($):</label>
+            <input type="number" id="capitalizedCost" name="capitalizedCost" step="0.01" required><br>
+    
+            <label for="residualValue">Residual Value ($):</label>
+            <input type="number" id="residualValue" name="residualValue" step="0.01" required><br>
+    
+            <label for="apr">APR (%):</label>
+            <input type="number" id="apr" name="apr" step="0.01" required><br>
+    
+            <label for="term">Term (months):</label>
+            <input type="number" id="term" name="term" required><br>
+    
+            <label for="salesTaxRate">Sales Tax Rate (%):</label>
+            <input type="number" id="salesTaxRate" name="salesTaxRate" step="0.01" required><br>
+    
+            <label for="downPayment">Down Payment ($):</label>
+            <input type="number" id="downPayment" name="downPayment" step="0.01" required><br>
+    
+            <label for="fees">Fees ($):</label>
+            <input type="number" id="fees" name="fees" step="0.01" required><br>
+            <div class="buttons">
+                <button type="submit">Calculate</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+        <h2 id="result"></h2>
+
+    </div>
+
+
+</body>
+</html>
