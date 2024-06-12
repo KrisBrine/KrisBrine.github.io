@@ -18,10 +18,10 @@ header {
     margin-bottom: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-between; /* Changed to space-between */
-    align-items: center; /* Center items vertically */
-    padding-left: 20px; /* Added padding to the left */
-    padding-right: 20px; /* Added padding to the right */
+    justify-content: space-between;
+    align-items: center; 
+    padding-left: 20px; 
+    padding-right: 20px; 
 }
 
 nav {
